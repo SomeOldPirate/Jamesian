@@ -1,0 +1,489 @@
+@font-face {
+  font-family: "gabriele";
+  src: url("../assets/fonts/gabriele/gabriele-l.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "gabriele";
+  src: url("../assets/fonts/gabriele/gabriele-bad.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Erika Type";
+  src: url("../assets/fonts/erica-type/Erika Type.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Erika Type";
+  src: url("../assets/fonts/erica-type/Erika Type_B.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TeX Gyre Cursor";
+  src: url("../assets/fonts/TeX-Gyre-Cursor/texgyrecursor-bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TeX Gyre Cursor";
+  src: url("../assets/fonts/TeX-Gyre-Cursor/texgyrecursor-regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TeX Gyre Cursor";
+  src: url("../assets/fonts/TeX-Gyre-Cursor/texgyrecursor-italic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "TeX Gyre Cursor";
+  src: url("../assets/fonts/TeX-Gyre-Cursor/texgyrecursor-bolditalic.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+:root,
+.application.jamesian.themed.theme-light {
+  --jamesian-c-dark: #191813;
+  --jamesian-c-faint: #6f4d74;
+  --jamesian-c-beige: #989584;
+  --jamesian-c-tan: #444444;
+  --jamesian-c-white: #f8e6f9;
+  --jamesian-c-black: #000000;
+  --jamesian-c-groove: #ab8eb1;
+  --jamesian-c-dread: #097805;
+  --jamesian-c-lt-dread: #99d097;
+  --jamesian-c-purple: #560561;
+  --jamesian-c-lt-purple: #e2bde6;
+  --jamesian-c-pink: #b8016c;
+  --jamesian-input-background-color: rgba(0, 0, 0, 0.1);
+  --jamesian-input-border-color: #666;
+}
+
+.theme-dark,
+.application.jamesian.themed.theme-dark {
+  --jamesian-c-dark: #c9c7b8;
+  --jamesian-c-faint: #e0d3e2;
+  --jamesian-c-beige: #868686;
+  --jamesian-c-tan: #b5b3a4;
+  --jamesian-c-white: #0d020e;
+  --jamesian-c-black: #ded1de;
+  --jamesian-c-groove: #413643;
+  --jamesian-c-dread: #99d097;
+  --jamesian-c-lt-dread: #2c7f2b;
+  --jamesian-c-purple: #ddaee4;
+  --jamesian-c-lt-purple: #95449f;
+  --jamesian-c-pink: #b54285;
+  --jamesian-input-background-color: rgba(255, 255, 255, 0.045);
+  --jamesian-input-border-color: var(--jamesian-c-groove);
+}
+
+.dread-color {
+  color: var(--jamesian-c-dread) !important;
+}
+
+.dread-lt-color {
+  color: var(--jamesian-c-lt-dread) !important;
+}
+
+.base-color {
+  color: var(--jamesian-c-black) !important;
+}
+
+.error-color {
+  color: var(--jamesian-c-pink) !important;
+}
+
+.font-large {
+  font-size: 1.5em;
+}
+
+.font-x-large {
+  font-size: 2em;
+}
+
+.cd-roll-chat {
+  background-color: var(--jamesian-c-white);
+  background-image: url("../assets/ui/actor/sheet-bg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: var(--jamesian-c-black);
+  border: 1px solid var(--jamesian-c-groove);
+  border-radius: 5px;
+  font-family: "TeX Gyre Cursor", "Courier New", monospace;
+}
+.cd-roll-chat .message-header {
+  line-height: 20px;
+  color: var(--jamesian-c-black);
+}
+.cd-roll-chat hr {
+  flex-grow: 0;
+  width: -webkit-fill-available;
+  padding: 0;
+  border: none;
+  border-top: 1px solid var(--jamesian-c-groove);
+  margin: 10px 0 10px 0;
+}
+
+.cd-roll-dialog .window-content {
+  background-color: var(--jamesian-c-white);
+  background-image: url("../assets/ui/actor/sheet-bg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  color: var(--jamesian-c-black);
+}
+.cd-roll-dialog .window-content label {
+  display: flex;
+  align-items: center;
+}
+.cd-roll-dialog .window-content button {
+  color: var(--jamesian-c-white);
+  background-color: var(--jamesian-c-faint);
+  border: none;
+  font-family: "gabriele", serif;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  height: auto;
+  overflow-x: hidden;
+}
+.cd-roll-dialog .window-content button i {
+  color: var(--jamesian-c-lt-purple);
+}
+.cd-roll-dialog .window-content button:hover, .cd-roll-dialog .window-content button:focus {
+  box-shadow: 0 0 5px var(--jamesian-c-dread);
+  text-shadow: 0 0 10px var(--jamesian-c-dread);
+}
+
+.grid,
+.grid-2col {
+  display: grid;
+  grid-column: span 2/span 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.grid-3col {
+  grid-column: span 3/span 3;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4col {
+  grid-column: span 4/span 4;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-5col {
+  grid-column: span 5/span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-6col {
+  grid-column: span 6/span 6;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-7col {
+  grid-column: span 7/span 7;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-8col {
+  grid-column: span 8/span 8;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-9col {
+  grid-column: span 9/span 9;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid-10col {
+  grid-column: span 10/span 10;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid-11col {
+  grid-column: span 11/span 11;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.grid-12col {
+  grid-column: span 12/span 12;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.grid-start-2 {
+  grid-column-start: 2;
+}
+
+.grid-start-3 {
+  grid-column-start: 3;
+}
+
+.grid-start-4 {
+  grid-column-start: 4;
+}
+
+.grid-start-5 {
+  grid-column-start: 5;
+}
+
+.grid-start-6 {
+  grid-column-start: 6;
+}
+
+.grid-start-7 {
+  grid-column-start: 7;
+}
+
+.grid-start-8 {
+  grid-column-start: 8;
+}
+
+.grid-start-9 {
+  grid-column-start: 9;
+}
+
+.grid-start-10 {
+  grid-column-start: 10;
+}
+
+.grid-start-11 {
+  grid-column-start: 11;
+}
+
+.grid-start-12 {
+  grid-column-start: 12;
+}
+
+.grid-span-2 {
+  grid-column-end: span 2;
+}
+
+.grid-span-3 {
+  grid-column-end: span 3;
+}
+
+.grid-span-4 {
+  grid-column-end: span 4;
+}
+
+.grid-span-5 {
+  grid-column-end: span 5;
+}
+
+.grid-span-6 {
+  grid-column-end: span 6;
+}
+
+.grid-span-7 {
+  grid-column-end: span 7;
+}
+
+.grid-span-8 {
+  grid-column-end: span 8;
+}
+
+.grid-span-9 {
+  grid-column-end: span 9;
+}
+
+.grid-span-10 {
+  grid-column-end: span 10;
+}
+
+.grid-span-11 {
+  grid-column-end: span 11;
+}
+
+.grid-span-12 {
+  grid-column-end: span 12;
+}
+
+/* Utilities. */
+/* Global styles */
+/* Styles limited to jamesian sheets */
+/* Styles limited to jamesian sheets */
+.jamesian .window-content {
+  padding: 0;
+  background-color: var(--jamesian-c-white);
+  background-image: url("../assets/ui/actor/sheet-bg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  overflow-y: auto;
+  font-family: "TeX Gyre Cursor", "Courier New", monospace;
+}
+.jamesian .window-content h2 {
+  border-bottom: 1px solid var(--jamesian-c-beige);
+}
+.jamesian .window-content button,
+.jamesian .window-content a {
+  color: var(--jamesian-c-black);
+}
+.jamesian .window-content input {
+  color: var(--jamesian-c-black);
+}
+.jamesian .window-content input:focus {
+  box-shadow: 0 0 6px var(--jamesian-c-dread);
+  outline: none;
+}
+.jamesian .window-content input::placeholder {
+  color: var(--jamesian-c-beige);
+}
+.jamesian .window-content textarea {
+  color: var(--jamesian-c-black);
+  padding: 5px;
+}
+.jamesian .window-content textarea:focus {
+  box-shadow: 0 0 6px var(--jamesian-c-dread);
+  outline: none;
+}
+.jamesian .window-content textarea::placeholder {
+  color: var(--jamesian-c-beige);
+}
+.jamesian .window-content a i {
+  color: var(--jamesian-c-purple);
+}
+.jamesian .window-content a:hover, .jamesian .window-content a:focus {
+  text-shadow: 0 0 10px var(--jamesian-c-dread);
+}
+.jamesian .window-content .rollable:hover, .jamesian .window-content .rollable:focus {
+  text-shadow: 0 0 10px var(--jamesian-c-dread);
+}
+.jamesian prose-mirror {
+  min-height: 180px;
+}
+.jamesian prose-mirror .editor-content {
+  padding: 0 0.5rem;
+  background: var(--jamesian-input-background-color);
+  border: 1px solid var(--jamesian-input-border-color);
+  border-radius: 4px;
+}
+.jamesian .prosemirror menu,
+.jamesian prose-mirror menu {
+  padding: 0px;
+  gap: 0px;
+}
+.jamesian .npc-header h2 {
+  font-size: large;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.jamesian .cd-sheet-header {
+  flex: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 8px 8px 0px 8px;
+}
+.jamesian .cd-sheet-header button {
+  color: var(--jamesian-c-white);
+  background-color: var(--jamesian-c-faint);
+  border: none;
+  font-family: "gabriele", serif;
+  font-size: 13px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  height: auto;
+  overflow-x: hidden;
+}
+.jamesian .cd-sheet-header button i {
+  color: var(--jamesian-c-lt-purple);
+}
+.jamesian .cd-sheet-header button:hover, .jamesian .cd-sheet-header button:focus {
+  box-shadow: 0 0 5px var(--jamesian-c-lt-dread);
+  text-shadow: 0 0 10px var(--jamesian-c-lt-dread);
+}
+.jamesian .cd-sheet-header .dread {
+  font-size: 20px;
+  margin: 0px 10px 0px 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.jamesian .cd-sheet-header .dread input[type=checkbox]::before,
+.jamesian .cd-sheet-header .dread input[type=radio]::before {
+  color: var(--jamesian-c-dread);
+}
+.jamesian .cd-sheet-header .dread input[type=checkbox]:not(:first-child:last-child):last-child::before,
+.jamesian .cd-sheet-header .dread input[type=radio]:not(:first-child:last-child):last-child::before {
+  color: var(--jamesian-c-pink);
+}
+.jamesian .cd-sheet-header .dread input[type=checkbox]:checked::before,
+.jamesian .cd-sheet-header .dread input[type=radio]:checked::before {
+  color: var(--jamesian-c-white);
+  margin-top: 2px;
+}
+.jamesian .cd-sheet-header .dread input[type=checkbox]:checked::after,
+.jamesian .cd-sheet-header .dread input[type=radio]:checked::after {
+  color: var(--jamesian-c-dread);
+}
+.jamesian .cd-sheet-header .dread input[type=checkbox]:checked:not(:first-child:last-child):last-child::before,
+.jamesian .cd-sheet-header .dread input[type=radio]:checked:not(:first-child:last-child):last-child::before {
+  color: var(--jamesian-c-white);
+  margin-top: 2px;
+}
+.jamesian .cd-sheet-header .dread input[type=checkbox]:checked:not(:first-child:last-child):last-child::after,
+.jamesian .cd-sheet-header .dread input[type=radio]:checked:not(:first-child:last-child):last-child::after {
+  color: var(--jamesian-c-pink);
+}
+.jamesian .cd-sheet-header .profile-img {
+  height: 292px;
+  margin-bottom: 10px;
+  border: 1px solid var(--jamesian-c-groove);
+}
+.jamesian .cd-sheet-header .header-fields {
+  height: 30px;
+  padding: 0px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+}
+.jamesian .cd-sheet-header .sub-header-fields {
+  margin-bottom: 10px;
+  width: 100%;
+}
+.jamesian .cd-sheet-header .charname {
+  height: 40px;
+  padding: 0px;
+  margin: 0 0 10px 0;
+  font-size: 30px;
+  text-align: center;
+  width: 100%;
+}
+.jamesian .cd-sheet-header textarea {
+  min-height: 45px;
+  resize: none;
+}
+.jamesian .tab {
+  padding: 0px 8px;
+}
+.jamesian nav.sheet-tabs {
+  margin: 4px 0;
+  border-top: none;
+  border-bottom: 1px solid var(--jamesian-c-groove);
+}
+.jamesian a.active {
+  text-shadow: none;
+  color: var(--jamesian-c-purple);
+  border-bottom: 2px solid var(--jamesian-c-purple);
+}
+.jamesian .rules b {
+  color: var(--jamesian-c-purple);
+}
+.jamesian .editor {
+  color: var(--jamesian-c-black);
+}
+
+/*# sourceMappingURL=jamesian.css.map */

@@ -1,0 +1,75 @@
+{{!-- Sheet Header --}}
+<header class="cd-sheet-header">
+  <input 
+    class="charname" 
+    name="name" 
+    type="text" 
+    value="{{actor.name}}" 
+    placeholder='{{localize "jamesian.ActorName"}}' />
+  <img
+    class='profile-img'
+    src='{{actor.img}}'
+    alt="{{actor.name}}"
+    title="{{actor.name}}"
+    data-edit='img'
+    data-action='onEditImage'
+    data-tooltip='{{actor.name}}'
+  />
+  <input 
+    type="text" 
+    class="header-fields" 
+    name="system.occupation" 
+    value="{{system.occupation}}"
+    data-dtype='String'
+    placeholder='{{localize "jamesian.OccupationName"}}' />
+
+  <div class="dread">
+    <b>
+      <a 
+        title='{{localize "jamesian.dreadRollHoverText"}}'
+        data-action="roll"
+        data-roll-type="cleardread" 
+        class="{{system.dread.color}}">
+          {{localize "jamesian.dread"}}
+      </a>
+    </b>
+    {{#times system.dread.max}}
+      <input
+        type="checkbox"
+        class="dread-check"
+        data-action="ondreadUpdate"
+        data-property="system.dread.value"
+        data-value="{{@index}}"
+        {{checked (gt ../system.dread.value @index)}}
+      />
+    {{/times}}
+  </div>
+
+  <div class="grid grid-2col">
+    <button 
+      type="button" 
+      data-action="roll"
+      data-roll-type="investigate">
+        <i class="fa-solid fa-dice"></i> {{localize "jamesian.InvestigateBtn"}}
+    </button>
+    <button 
+      type="button" 
+      data-action="roll"
+      data-roll-type="doSomethingElse">
+      <i class="fa-solid fa-dice"></i> {{localize "jamesian.OtherActionsBtn"}}
+    </button>
+    <button 
+      type="button" 
+      data-action="roll"
+      data-roll-type="dread">
+      <i class="fa-solid fa-dice dread-lt-color"></i> 
+      <b class="dread-lt-color">{{localize "jamesian.dreadRollBtn"}}</b>
+    </button>
+    <button 
+      type="button" 
+      data-action="roll"
+      data-roll-type="failure">
+      <i class="fa-solid fa-dice"></i> {{localize "jamesian.FailureRollBtn"}}
+    </button>
+  </div>
+</header>

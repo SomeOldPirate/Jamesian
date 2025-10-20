@@ -1,0 +1,71 @@
+{
+	"id": "jamesian",
+	"title": "Jamesian Dark",
+	"description": "An Unofficial Cthulhu Dark system for Foundry VTT.",
+	"version": "1",
+	"compatibility": {
+		"minimum": 12,
+		"verified": 13.347,
+		"maximum": 13
+	},
+	"authors": [
+		{
+			"name": "Some Old Pirate",
+			"url": "https://github.com/SomeOldPirate"}],
+	"documentTypes": {
+		"Actor": {
+			"character": {
+				"htmlFields": ["notes"]
+			},
+			"npc": {
+				"htmlFields": ["notes"]
+			}
+		},
+		"Item": {
+			"item": {
+				"htmlFields": ["description"]
+			}
+		}
+	},
+	"esmodules": ["module/jamesian.mjs"],
+	"styles": ["css/jamesian.css"],
+	"flags": {
+		"hotReload": {
+			"extensions": ["css", "html", "hbs", "json"],
+			"paths": ["css", "lang", "templates"]
+		}
+	},
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		}],
+	"primaryTokenAttribute": "dread",
+	"url": "",
+	"manifest": "https://github.com/SomeOldPirate/jamesian/releases/latest/download/system.json",
+	"download": "https://github.com/SomeOldPirate/jamesian/releases/download/1.0/jamesian.zip",
+	"license": "LICENSE",
+	"readme": "README.md",
+	"background": "systems/jamesian/assets/cover-bg.webp",
+	"bugs": "",
+	"media": [
+		{
+			"type": "screenshot",
+			"url": "",
+			"loop": false,
+			"caption": ""
+		},
+		{
+			"type": "cover",
+			"url": "systems/jamesian/assets/cover.webp",
+			"loop": false,
+			"caption": ""
+		},
+		{
+			"type": "setup",
+			"url": "",
+			"thumbnail": "systems/jamesian/assets/setup-image-thumb.jpg"
+		}
+	]
+}
